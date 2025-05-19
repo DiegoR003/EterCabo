@@ -10,3 +10,6 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# EterCabo
+Monitoreo de la calidad de aire, el proyecto realiza el monitoreo de la calidad de aire fuera de una habitación y en el interior de este, si el nivel en el exterior es malo se cierra la ventana y enciende un purificador de aire
