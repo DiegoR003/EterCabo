@@ -78,7 +78,7 @@
         }
     </style>
 </head>
-<body> 
+<body style="background-color: #f4f4f4;"> 
    
 <header>
     <div class="px-3 py-2  text-white" style=" background-color: #2E3A59;">
@@ -105,11 +105,9 @@
     </div>
 </header>
 
-    <h1  class="ml-2" style="margin-right: 650px; margin-top: 15px;"> Mis dispositivos </h1>
-
-    <!-- Sidebar Bootstrap -->
-<div class="d-flex">
-  <div class="bg-light border-end"  id="sidebar-wrapper" style="width: 320px; max-height: 700px; margin-bottom: 400px;">
+   <div class="d-flex">
+  <!-- Sidebar -->
+  <div class="bg-light border-end" id="sidebar-wrapper" style="width: 250px; min-height: 100vh;">
     <div class="sidebar-heading border-bottom bg-primary text-white p-3">Panel Principal</div>
     <div class="list-group list-group-flush">
       <a href="#" class="list-group-item list-group-item-action bg-light">Mapa</a>
@@ -118,61 +116,79 @@
     </div>
   </div>
 
- 
-  <!-- Tarjetas de Dispositivos (Pendiente)-->
+  <!-- Contenido principal -->
+  <div class="container-fluid p-4">
+    <h1 class="mb-4"  style="font-weight: bold; color: #2E3A59;" >Mis dispositivos</h1>
+    <!-- <h3 class="mb-3">Sensores Activos</h3> -->
 
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col" >
+        <div class="card text-white bg-dark h-100" style="background: linear-gradient(to right, #2E3A59, #4BA3C7); /* Café oscuro a café medio */">
+          <img src="../assets/sensor1.png" class="card-img-top" alt="Sensor de aire" />
+          <div class="card-body">
+            <h5 class="card-title">Dispositivo de Diego</h5>
+            <p class="card-text">CO₂: 410 ppm</p>
+            <p class="card-text">PM2.5: 12 µg/m³</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-white bg-dark h-100" style="background: linear-gradient(to right, #2E3A59, #4BA3C7); /* Café oscuro a café medio */">
+          <img src="../assets/sensor2.png" class="card-img-top" alt="Sensor de aire" />
+          <div class="card-body">
+            <h5 class="card-title">Dispositivo de Elizabeth</h5>
+            <p class="card-text">CO₂: 370 ppm</p>
+            <p class="card-text">PM2.5: 15 µg/m³</p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-white bg-dark h-100" style="background: linear-gradient(to right, #2E3A59, #4BA3C7); /* Café oscuro a café medio */">
+          <img src="../assets/sensor3.png" class="card-img-top" alt="Sensor de aire" />
+          <div class="card-body">
+            <h5 class="card-title">Dispositivo de Daniel</h5>
+            <p class="card-text">CO₂: 370 ppm</p>
+            <p class="card-text">PM2.5: 15 µg/m³</p>
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card text-white bg-dark h-100" style="background: linear-gradient(to right, #2E3A59, #4BA3C7); /* Café oscuro a café medio */">
+          <img src="../assets/sensor4.png" class="card-img-top" alt="Sensor de aire" />
+          <div class="card-body">
+            <h5 class="card-title">Dispositivo de Fernando</h5>
+            <p class="card-text">CO₂: 370 ppm</p>
+            <p class="card-text">PM2.5: 15 µg/m³</p>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card text-white bg-dark h-100" style="background: linear-gradient(to right, #2E3A59, #4BA3C7); /* Café oscuro a café medio */">
+          <img src="../assets/sensor4.png" class="card-img-top" alt="Sensor de aire" />
+          <div class="card-body">
+            <h5 class="card-title">Dispositivo de Angel</h5>
+            <p class="card-text">CO₂: 370 ppm</p>
+            <p class="card-text">PM2.5: 15 µg/m³</p>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+6
   
 
-  <div class="container-fluid p-4">
-    <!-- Aquí queda tu contenido original (el medidor) -->
-
-    <div class="container">
-        
-        <h1>Medidor de Calidad de Aire</h1>
-        <div class="measurer">
-            <div class="bd-measurer">
-                <div class="fill-measurer" id="fillMeasurer"></div>
-                <div class="cover-measurer" id="airQualityText">Buena</div>
-            </div>
-        </div>
-        <button class="button" onclick="togglePurifier()">Encender Purificador</button>
-    </div>
-
-    <script>
-        function updateAirQuality(value) {
-            const fillMeasurer = document.getElementById("fillMeasurer");
-            const airQualityText = document.getElementById("airQualityText");
-            let rotation = 0;
-            let color = "#07DDF6";
-            
-            if (value < 50) {
-                rotation = 0.15;
-                color = "green";
-                airQualityText.textContent = "Buena";
-            } else if (value < 100) {
-                rotation = 0.35;
-                color = "yellow";
-                airQualityText.textContent = "Moderada";
-            } else {
-                rotation = 0.5;
-                color = "red";
-                airQualityText.textContent = "Mala";
-            }
-            
-            fillMeasurer.style.transform = `rotate(${rotation}turn)`;
-            fillMeasurer.style.background = color;
-        }
-
-        function togglePurifier() {
-            alert("Purificador encendido");
-        }
-
-        // Simulación de datos dinámicos
-        setInterval(() => {
-            const randomValue = Math.floor(Math.random() * 200);
-            updateAirQuality(randomValue);
-        }, 3000);
-    </script>
 
   <br>
   <br>
